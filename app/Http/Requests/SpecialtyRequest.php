@@ -11,7 +11,7 @@ class SpecialtyRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class SpecialtyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'specialty_name' => 'required|string|max:50'
         ];
     }
 }
