@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('practice_license',20)->unique();
             $table->string('name',50);
             $table->string('phone_number',15);
-            $table->text('adrress');
+            $table->text('address');
             $table->foreignId('specialty_id')->constrained('specialties')->onDelete('cascade');
             $table->timestamps();
         });

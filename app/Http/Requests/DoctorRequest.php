@@ -11,7 +11,7 @@ class DoctorRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,15 @@ class DoctorRequest extends FormRequest
      */
     public function rules(): array
     {
+        // ambil id yang sedang di update request atau route
+        $id = $this->route('id');
+
         return [
-            //
+            'practice_license' => 'required|string|max:20|unique:doctors,practice_license,' . $id,
+            'name' => 'required|string|max:50',
+            'phone_number' => 'required|string|max:15',
+            'address' => 'required|string',
+            'specialty_id' => 'required|numeric',
         ];
     }
 }
