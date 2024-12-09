@@ -9,9 +9,13 @@
   ```
   php -r "copy('.env.example', '.env');";
   ```
-- Kemudian, jalankan perintah:
+- Kemudian membuat application key baru, dengan cara jalankan perintah:
   ```
   php artisan key:generate
+  ```
+- Selanjutnya, generate secret key untuk JWT, seperti berikut :
+  ```
+  php artisan jwt:secret
   ```
 - Buat database dengan nama ***clinic***
 - Setelah itu, buka code pada Vscode. Sesuaikan parameter pada file **.env**, seperti berikut:
