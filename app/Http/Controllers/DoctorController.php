@@ -108,7 +108,7 @@ class DoctorController extends Controller
     {
         try {
 
-            $doctor = Doctor::find($id);
+            $doctor = Doctor::with('specialty')->find($id);
 
             // Cek
             if(!$doctor){
